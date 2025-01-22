@@ -18,9 +18,9 @@ import type {
   GraphQLUnionType,
 } from 'graphql';
 import * as graphql from 'graphql';
-import { defaultConfig, type GQtyConfig } from './config';
-import * as deps from './deps';
-import { formatPrettier } from './prettier';
+import { defaultConfig, type GQtyConfig } from '../config';
+import * as deps from '../deps';
+import { formatPrettier } from '../prettier';
 
 import { generateMutationQueryTypes } from './mutation-query-types';
 import { generateMutationQueryParamNames } from './mutation-query-param-names';
@@ -825,7 +825,7 @@ export async function generate(
             variables,
             operationName,
           }),
-          ${pylon ? 'mode: "cors",' : ''}
+          ${pylon ? '' : 'mode: "cors",'}
           ...fetchOptions
         });
 
